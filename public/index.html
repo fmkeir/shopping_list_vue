@@ -16,7 +16,7 @@
         <input type="radio" name="priority" value="low" v-model="newPriority">
       <input type="submit" value="Save item">
     </form>
-    <button @click="completeAll">Completed them mate</button>
+    <button @click="completeAll">Completed all</button>
     <ul>
       <li v-for="(toDo, index) in toDos">
         <span>{{toDo.name}}</span>

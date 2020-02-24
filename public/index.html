@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping List</title>
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <h1>ToDo's</h1>
+  <div id="app">
+    <form @submit.prevent="saveNewToDo">
+      <input type="text" name="toDo" v-model="newToDo">
+      <label for="priority">High:</label>
+        <input type="radio" name="priority" value="high" v-model="newPriority">
+      <label for="priority">Low:</label>
+        <input type="radio" name="priority" value="low" v-model="newPriority">
+      <input type="submit" value="Save item">
+    </form>
+    <button @click="completeAll">Completed them mate</button>
+    <ul>
+      <li v-for="(toDo, index) in toDos">
+        <span>{{toDo.name}}</span>
+        <span>{{toDo.priority}}</span>
+        <button @click="complete(index)">Destroy</button>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
